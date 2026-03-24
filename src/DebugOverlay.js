@@ -24,17 +24,9 @@ export class DebugOverlay {
     this.easyWin = false;
   }
 
-  toggle() {
-    this.enabled = !this.enabled;
-  }
+  toggle() {}
 
-  log(evt) {
-    // evt is { name, payload } from EventBus wildcard
-    if (!evt) return;
-    const msg = `${evt.name}`;
-    this.lines.unshift(msg);
-    if (this.lines.length > this.maxLines) this.lines.length = this.maxLines;
-  }
+  log() {}
 
   draw({ game } = {}) {
     if (!this.enabled) return;
