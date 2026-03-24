@@ -21,6 +21,9 @@ export class DebugOverlay {
     this.enabled = false;
     this.lines = [];
     this.maxLines = 8;
+
+    this.moonGravity = false;
+    this.invincible = false;
   }
 
   toggle() {
