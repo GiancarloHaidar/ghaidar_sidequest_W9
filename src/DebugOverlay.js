@@ -52,6 +52,10 @@ export class DebugOverlay {
       this.invincible = !this.invincible;
     }
 
+    if (this.invincible && game?.level?.playerCtrl?.player) {
+      game.level.playerCtrl.player.invulnTimer = 9999;
+    }
+
     push();
     noStroke();
     fill(0, 160);
