@@ -43,6 +43,11 @@ export class DebugOverlay {
 
     camera.off();
 
+    if (kb.presses("g")) {
+      this.moonGravity = !this.moonGravity;
+      world.gravity.y = this.moonGravity ? 2 : 10;
+    }
+
     push();
     noStroke();
     fill(0, 160);
