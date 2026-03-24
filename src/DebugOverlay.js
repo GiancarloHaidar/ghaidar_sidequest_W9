@@ -18,9 +18,10 @@
 
 export class DebugOverlay {
   constructor() {
-    this.enabled = false;
-    this.lines = [];
-    this.maxLines = 8;
+    this.probes = false;
+    this.colliders = false;
+    this.invincible = false;
+    this.easyWin = false;
   }
 
   toggle() {
