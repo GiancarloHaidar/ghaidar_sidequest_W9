@@ -48,6 +48,10 @@ export class DebugOverlay {
       world.gravity.y = this.moonGravity ? 2 : 10;
     }
 
+    if (kb.presses("i")) {
+      this.invincible = !this.invincible;
+    }
+
     push();
     noStroke();
     fill(0, 160);
