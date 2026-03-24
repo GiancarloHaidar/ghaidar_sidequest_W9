@@ -28,6 +28,13 @@ export class DebugOverlay {
 
   log() {}
 
+  onOff(val) {
+    if (val) {
+      return "ON";
+    }
+    return "OFF";
+  }
+
   draw({ game } = {}) {
     if (!this.enabled) return;
 
