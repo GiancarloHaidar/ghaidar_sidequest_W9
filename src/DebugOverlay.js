@@ -25,7 +25,6 @@ export class DebugOverlay {
   }
 
   toggle() {}
-
   log() {}
 
   onOff(val) {
@@ -62,35 +61,15 @@ export class DebugOverlay {
     }
 
     camera.off();
-
-    push();
+    fill(0, 150);
     noStroke();
-    fill(0, 160);
-    rect(6, 6, 228, 86, 6);
-    pop();
-
+    rect(5, 5, 130, 55);
     fill(255);
-    textSize(10);
-
-    const lvl = game?.level || null;
-    const score = lvl?.score ?? 0;
-
-    const playerCtrl = lvl?.playerCtrl || null;
-    const hp = playerCtrl?.health ?? "?";
-    const maxHp = playerCtrl?.maxHealth ?? "?";
-    const dead = playerCtrl?.dead ?? false;
-    const won = lvl?.won ?? false;
-
-    text(`Score: ${score}`, 12, 22);
-    text(`Health: ${hp}/${maxHp}`, 12, 34);
-    text(`Won: ${won}  Dead: ${dead}`, 12, 46);
-
-    let y = 62;
-    for (const line of this.lines) {
-      text(line, 12, y);
-      y += 10;
-    }
-
+    textSize(8);
+    text("1: Boar Probes " + this.onOff(this.probes), 10, 17);
+    text("2: Colliders " + this.onOff(this.colliders), 10, 27);
+    text("3: Invincible " + this.onOff(this.invincible), 10, 37);
+    text("4: Win Score=1 " + this.onOff(this.easyWin), 10, 47);
     camera.on();
   }
 }
