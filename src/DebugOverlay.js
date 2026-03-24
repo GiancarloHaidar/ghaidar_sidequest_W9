@@ -21,9 +21,6 @@ export class DebugOverlay {
     this.enabled = false;
     this.lines = [];
     this.maxLines = 8;
-
-    this.moonGravity = false;
-    this.invincible = false;
   }
 
   toggle() {
@@ -42,19 +39,6 @@ export class DebugOverlay {
     if (!this.enabled) return;
 
     camera.off();
-
-    if (kb.presses("g")) {
-      this.moonGravity = !this.moonGravity;
-      world.gravity.y = this.moonGravity ? 2 : 10;
-    }
-
-    if (kb.presses("i")) {
-      this.invincible = !this.invincible;
-    }
-
-    if (this.invincible && game?.level?.playerCtrl?.player) {
-      game.level.playerCtrl.player.invulnTimer = 9999;
-    }
 
     push();
     noStroke();
