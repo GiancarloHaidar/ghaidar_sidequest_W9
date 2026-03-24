@@ -63,13 +63,13 @@ export class DebugOverlay {
     camera.off();
     fill(0, 150);
     noStroke();
-    rect(5, 5, 130 + 65, 55);
+    rect(5, 20, 130 + 65, 50);
     fill(255);
     textSize(12);
-    text("Press '1' Boar Probes: " + this.onOff(this.probes), 10, 17);
-    text("Press '2' Colliders: " + this.onOff(this.colliders), 10, 27);
-    text("Press '3' Invincible: " + this.onOff(this.invincible), 10, 37);
-    text("Press '4' Win Score = 1: " + this.onOff(this.easyWin), 10, 47);
+    text("Press '1' Boar Probes: " + this.onOff(this.probes), 10, 17 + 15);
+    text("Press '2' Colliders: " + this.onOff(this.colliders), 10, 27 + 15);
+    text("Press '3' Invincible: " + this.onOff(this.invincible), 10, 37 + 15);
+    text("Press '4' Win Score = 1: " + this.onOff(this.easyWin), 10, 47 + 15);
     camera.on();
   }
 }
