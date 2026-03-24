@@ -29,10 +29,11 @@ export class DebugOverlay {
   log() {}
 
   onOff(val) {
-    if (val) {
+    if (val === true) {
       return "ON";
+    } else {
+      return "OFF";
     }
-    return "OFF";
   }
 
   draw({ game } = {}) {
@@ -47,6 +48,17 @@ export class DebugOverlay {
     }
     if (kb.presses("4")) {
       this.easyWin = !this.easyWin;
+    }
+
+    let lvl = game.level;
+    allSprites.debug = this.colliders;
+    if (this.invincible) {
+      lvl.player.invulnTimer = 9999;
+    }
+    if (this.easyWin) {
+      lvl.WIN_SCORE = 1;
+    } else {
+      lvl.WIN_SCORE = 15;
     }
 
     camera.off();
