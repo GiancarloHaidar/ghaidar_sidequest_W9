@@ -36,7 +36,18 @@ export class DebugOverlay {
   }
 
   draw({ game } = {}) {
-    if (!this.enabled) return;
+    if (kb.presses("1")) {
+      this.probes = !this.probes;
+    }
+    if (kb.presses("2")) {
+      this.colliders = !this.colliders;
+    }
+    if (kb.presses("3")) {
+      this.invincible = !this.invincible;
+    }
+    if (kb.presses("4")) {
+      this.easyWin = !this.easyWin;
+    }
 
     camera.off();
 
